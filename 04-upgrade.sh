@@ -1,7 +1,7 @@
 #!/bin/bash
 # © joerg@casa-blu.de
 
-# Upgrade Nextcloud
+# Upgrade Portainer
 helm upgrade -n portainer portainer portainer/portainer \
     --values portainer-values.yaml \
     --set enterpriseEdition.enabled=true \
