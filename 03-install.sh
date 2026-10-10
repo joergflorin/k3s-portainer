@@ -6,7 +6,7 @@ helm install --create-namespace -n portainer portainer portainer/portainer \
     --values portainer-values.yaml \
     --set enterpriseEdition.enabled=true \
     --set enterpriseEdition.image.tag=lts \
-    --version 245.1.0 \
+    --version 245.2.0 \
     --wait \
     --timeout 10m
 
