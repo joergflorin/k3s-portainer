@@ -1,0 +1,20 @@
+service:
+  type: ClusterIP            # statt NodePort, nur noch über Traefik erreichbar
+
+ingress:
+  enabled: true
+  ingressClassName: traefik-lan
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt-lan
+    traefik.ingress.kubernetes.io/router.tls.domains.0.main: "*.mydomain.net"
+  hosts:
+    - host: portainer.mydomain.net
+      paths:
+        - path: "/"
+
+# Portainer hinter einem Reverse Proxy: Domain als vertrauenswürdig eintragen
+trusted_origins:
+  enabled: true
+  domains: "https://portainer.mydomain.net"

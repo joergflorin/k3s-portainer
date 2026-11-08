@@ -1,5 +1,0 @@
-service:
-  type: LoadBalancer
-  httpPort: 80
-  annotations:
-    metallb.io/loadBalancerIPs: "192.168.97.64"
