@@ -6,7 +6,7 @@ helm upgrade -n portainer portainer portainer/portainer \
     --values portainer-values.yaml \
     --set enterpriseEdition.enabled=true \
     --set enterpriseEdition.image.tag=lts \
-    --version 245.3.0 \
+    --version 245.3.1 \
     --wait \
     --timeout 10m
 
